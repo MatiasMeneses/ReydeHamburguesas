@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+header {
+    margin: 0;
+    width: 100%;
+    height: 20vh;
+    background-image: linear-gradient(rgba(5, 10, 5, 0.80), rgba(90, 40, 90, 0.80)),url(/img/imagenfondo.jpg) ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    .navbar {
+        width: 80%;
+        margin: auto;
+        padding: 35px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+        .logo {
+            width: 100px;
+            cursor: pointer;
+        }
+            li {
+                list-style: none;
+                display: inline-block;
+                margin: 0 20px;
+                position: relative;
+            }
+                a {
+                    text-decoration: none;
+                    color: white;
+                    font-family: sans-serif;
+                    font-size: 1.8rem;
+                }
+                    li::before {
+                        content: " ";
+                        height: 3px;
+                        width: 0%;
+                        background: sienna;
+                        position: absolute;
+                        left: 0%;
+                        bottom: -8px;
+                        transition: 0.4s ease-out;
+                    }
+                        li:hover::before {
+                            width: 100%;
+                        }
+}
+
+/*Condicional */
+
+$bgTitulos:  dark;
+
+h1 {
+    @if $bgTitulos == dark {
+        color: blanchedalmond;
+        background-color: black;
+    } @else {
+        color: red;
+    }
+}
+
+/*Bucles*/
+
+@for $i from 1 to 7 {
+    h#{$i}{
+        font-size: 12px * $i;
+    }
+}
+
+/*Columnas */
+
+@for $i from 1 to 7 {
+    .col-#{$i}{
+        width: 100%/ $i;
+        color: whitesmoke;
+        font-size: 5rem;
+        background-color: red;
+        height: 5rem;
+    }
+}
+
+/* Each */
+@each $background in red,green, blue, pink {
+    .bg-#{$background} {
+        background-color: $background;
+        font-size: 5rem;
+        height: 5rem;
+    }
+}
+
+/* Maps */
+
+$red-social: (
+    tw: #0066ff, 
+    fb: blue,
+    ig: #e4640f
+);
+@each $nombre, $valor in $red-social {
+    .icon-#{$nombre}{
+        background-color: $valor;
+        color: whitesmoke;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* Mixins*/
+@mixin btn {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid black
+}
+.btn--danger {
+    @include btn;
+    background-color: black;
+}

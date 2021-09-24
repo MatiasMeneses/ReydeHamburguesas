@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.extra {
+    margin: 0;
+    width: 100%;
+    height: 50vh;
+    background-image: linear-gradient(rgba(114, 116, 32, 0.8), rgba(65, 31, 65, 0.8)),url(/img/imagenfondo.jpg) ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.navbar {
+    width: 100%;
+    margin: auto;
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.8rem;
+}
+.navbar ul li::before {
+    content: " ";
+    height: 3px;
+    width: 0%;
+    background: sienna;
+    position: absolute;
+    left: 0%;
+    bottom: -8px;
+    transition: 0.4s ease-out;
+}
+.navbar ul li:hover::before {
+    width: 100%;
+}
+.navegation{
+    position: relative;
+}
+h1 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem 0 0 0;
+}
+#soloBaner {
+    color: white;
+    font-family: cursive;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width:768px) {
+    .navbar ul li { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 7rem;
+    }
+    h1 {
+        font-size: 3rem;
+        padding: 5rem 0 0 0;
+    }
+    #soloBaner {
+        font-size: 1rem;
+    }
+}
+img {
+    max-width: 100%;
+    margin-left: 4rem;
+    transition: 1s;
+}
+img:hover {
+    width: 120%;
+}
+/* Responsive */
+@media (min-width:768px) {
+    .gridPadre {
+        margin-left: 2.5rem;
+    }
+    img {
+        margin-left: 0;
+    }
+}
+@media (min-width:768px) {
+    .gridPadre{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+
+    }
+}
+@media (min-width:1024px){
+    .gridPadre{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+.hambur {
+    padding: 4rem;
+    margin: 2rem;
+}
+h3{
+    font-size: 2.5rem;
+}
+p {
+    font-size: 2rem;
+}
+.boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(35, 94, 53);
+    color: rgb(252, 255, 47);
+    text-decoration: none;
+    padding: 1rem;
+    font-weight: bold;
+}
+.boton:hover {
+    background-color: rgb(122, 180, 27);
+    transition: .1s ease-in-out;
+}
